@@ -16,7 +16,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <jakarta.jakartaee-api.version>8.0.0</jakarta.jakartaee-api.version>
     <microprofile.version>3.3</microprofile.version>
-    <junit-jupiter.version>5.5.0</junit-jupiter.version>
+    <junit-jupiter.version>5.7.0</junit-jupiter.version>
     <mockito-core.version>3.1.0</mockito-core.version>
   </properties>
 
@@ -28,7 +28,7 @@
     <dependency>
       <groupId>org.junit.platform</groupId>
       <artifactId>junit-platform-runner</artifactId>
-      <version>1.5.0</version>
+      <version>1.7.0</version>
       <scope>test</scope>
     </dependency>
 
@@ -56,6 +56,17 @@
       <version>3.0.1.Final</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.jboss.arquillian.extension</groupId>
+      <artifactId>arquillian-transaction-jta</artifactId>
+      <version>1.0.5</version>
+    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>org.hibernate</groupId>-->
+<!--      <artifactId>hibernate-core</artifactId>-->
+<!--      <version>5.4.27.Final</version>-->
+<!--      <scope>provided</scope>-->
+<!--    </dependency>-->
 
     <dependency>
       <groupId>org.slf4j</groupId>
@@ -82,11 +93,11 @@
 <!--      <version>8.4.1.jre11</version>-->
 <!--    </dependency>-->
 
-<!--    <dependency>-->
-<!--      <groupId>com.oracle.database.jdbc</groupId>-->
-<!--      <artifactId>ojdbc10</artifactId>-->
-<!--      <version>19.9.0.0</version>-->
-<!--    </dependency>-->
+    <dependency>
+      <groupId>com.oracle.database.jdbc</groupId>
+      <artifactId>ojdbc10</artifactId>
+      <version>19.9.0.0</version>
+    </dependency>
 
 <!--    <dependency>-->
 <!--      <groupId>org.postgresql</groupId>-->

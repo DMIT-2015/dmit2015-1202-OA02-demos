@@ -8,7 +8,7 @@ import javax.annotation.sql.DataSourceDefinitions;
 	@DataSourceDefinition(
 		name="java:app/datasources/h2databaseDS",
 		className="org.h2.jdbcx.JdbcDataSource",
-//		url="jdbc:h2:file:~/dmit2015db",
+//		url="jdbc:h2:file:~/dmit2015-jpa-jsf-crud-demo",
         url="jdbc:h2:mem:test;DB_CLOSE_DELAY=-1",
 		user="sa",
 		password="sa"),
@@ -20,12 +20,12 @@ import javax.annotation.sql.DataSourceDefinitions;
 //		user="user2015",
 //		password="Password2015"),
 
-	// @DataSourceDefinition(
-	// 	name="java:app/datasources/oracleUser2015DS",
-	// 	className="oracle.jdbc.pool.OracleDataSource",
-	// 	url="jdbc:oracle:thin:@localhost:11521/xepdb1",
-	// 	user="user2015",
-	// 	password="Password2015"),
+//	 @DataSourceDefinition(
+//	 	name="java:app/datasources/oracleUser2015DS",
+//	 	className="oracle.jdbc.pool.OracleDataSource",
+//	 	url="jdbc:oracle:thin:@localhost:11521/xepdb1",
+//	 	user="user2015",
+//	 	password="Password2015"),
 
 //	@DataSourceDefinition(
 //		name="java:app/datasources/mysqlDS",
