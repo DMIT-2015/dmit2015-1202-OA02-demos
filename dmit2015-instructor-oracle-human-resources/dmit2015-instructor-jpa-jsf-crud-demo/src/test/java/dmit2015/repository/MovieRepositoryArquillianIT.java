@@ -14,12 +14,17 @@ import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import javax.inject.Inject;
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
+import javax.validation.Validation;
+import javax.validation.Validator;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -42,6 +47,7 @@ class MovieRepositoryIT {
                  .addAsLibraries(pomFile.resolve("com.oracle.database.jdbc:ojdbc10:19.9.0.0").withTransitivity().asFile())
                 .addAsLibraries(pomFile.resolve("org.hamcrest:hamcrest:2.2").withTransitivity().asFile())
                 .addAsLibraries(pomFile.resolve("org.hibernate:hibernate-core:5.3.20.Final").withTransitivity().asFile())
+                .addAsLibraries(pomFile.resolve("org.hibernate.validator:hibernate-validator:6.2.0.Final").withTransitivity().asFile())
                 .addClass(ApplicationConfig.class)
                 .addClasses(Movie.class, MovieRepository.class)
 //                .addPackage("dmit2015.repository")
@@ -49,6 +55,25 @@ class MovieRepositoryIT {
                 .addAsResource("META-INF/sql/import-data.sql")
                 .addAsWebInfResource(EmptyAsset.INSTANCE,"beans.xml");
     }
+
+    @Test
+    void shouldFailToPersist() {
+        Movie newMovie = new Movie();
+        ConstraintViolationException cve = assertThrows(
+                ConstraintViolationException.class,
+                () -> _movieRepository.add(newMovie)
+        );
+        Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
+        Set<ConstraintViolation<Movie>> constraintViolations = validator.validate(newMovie);
+        assertEquals(4, constraintViolations.size());
+        constraintViolations.forEach(item -> {
+            System.out.println(item.getMessage());
+        });
+
+//        _movieRepository.add(newMovie);
+    }
+
+
 
     @Transactional(TransactionMode.ROLLBACK)
     @Test

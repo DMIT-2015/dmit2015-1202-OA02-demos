@@ -2,11 +2,15 @@ package dmit2015.repository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.transaction.Transactional;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+import javax.validation.Validator;
 
 import dmit2015.entity.Movie;
 
@@ -18,6 +22,13 @@ public class MovieRepository {
     private EntityManager em;
 
     public void add(Movie newMovie) {
+//        Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
+//        Set<ConstraintViolation<Movie>> constraintViolations = validator.validate(newMovie);
+//        if (constraintViolations.size() == 0) {
+//            em.persist(newMovie);
+//        } else {
+//            throw new RuntimeException("....");
+//        }
         em.persist(newMovie);
     }
 
