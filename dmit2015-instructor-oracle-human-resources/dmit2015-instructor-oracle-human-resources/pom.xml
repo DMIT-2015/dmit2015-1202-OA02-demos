@@ -22,6 +22,13 @@
 
   <dependencies>
 
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>5.4.27.Final</version>
+      <scope>provided</scope>
+    </dependency>
+
     <!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc10 -->
     <dependency>
       <groupId>com.oracle.database.jdbc</groupId>

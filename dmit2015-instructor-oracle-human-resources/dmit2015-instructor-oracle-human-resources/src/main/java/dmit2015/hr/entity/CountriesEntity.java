@@ -1,13 +1,27 @@
 package dmit2015.hr.entity;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.Objects;
 
 @Entity
 @Table(name = "COUNTRIES", schema = "HR", catalog = "")
 public class CountriesEntity {
+    private Long id;
     private String countryId;
     private String countryName;
+    private RegionsEntity regionsByRegionId;
+    private Collection<LocationsEntity> locationsByCountryId;
+
+    @Id
+    @GeneratedValue
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     @Id
     @Column(name = "COUNTRY_ID")
@@ -40,5 +54,24 @@ public class CountriesEntity {
     @Override
     public int hashCode() {
         return Objects.hash(countryId, countryName);
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "REGION_ID", referencedColumnName = "REGION_ID")
+    public RegionsEntity getRegionsByRegionId() {
+        return regionsByRegionId;
+    }
+
+    public void setRegionsByRegionId(RegionsEntity regionsByRegionId) {
+        this.regionsByRegionId = regionsByRegionId;
+    }
+
+    @OneToMany(mappedBy = "countriesByCountryId")
+    public Collection<LocationsEntity> getLocationsByCountryId() {
+        return locationsByCountryId;
+    }
+
+    public void setLocationsByCountryId(Collection<LocationsEntity> locationsByCountryId) {
+        this.locationsByCountryId = locationsByCountryId;
     }
 }

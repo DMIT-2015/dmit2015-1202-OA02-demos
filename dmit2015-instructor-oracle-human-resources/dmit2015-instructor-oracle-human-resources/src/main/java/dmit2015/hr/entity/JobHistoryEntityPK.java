@@ -7,16 +7,16 @@ import java.sql.Time;
 import java.util.Objects;
 
 public class JobHistoryEntityPK implements Serializable {
-    private long employeeId;
+    private Long employeeId;
     private Time startDate;
 
     @Column(name = "EMPLOYEE_ID")
     @Id
-    public long getEmployeeId() {
+    public Long getEmployeeId() {
         return employeeId;
     }
 
-    public void setEmployeeId(long employeeId) {
+    public void setEmployeeId(Long employeeId) {
         this.employeeId = employeeId;
     }
 
@@ -35,7 +35,7 @@ public class JobHistoryEntityPK implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         JobHistoryEntityPK that = (JobHistoryEntityPK) o;
-        return employeeId == that.employeeId && Objects.equals(startDate, that.startDate);
+        return Objects.equals(employeeId, that.employeeId) && Objects.equals(startDate, that.startDate);
     }
 
     @Override

@@ -2,12 +2,14 @@ package dmit2015.hr.entity;
 
 import javax.persistence.*;
 import java.sql.Time;
+import java.util.Collection;
 import java.util.Objects;
 
 @Entity
 @Table(name = "EMPLOYEES", schema = "HR", catalog = "")
 public class EmployeesEntity {
-    private long employeeId;
+    private Long id;
+    private Long employeeId;
     private String firstName;
     private String lastName;
     private String email;
@@ -15,14 +17,30 @@ public class EmployeesEntity {
     private Time hireDate;
     private Long salary;
     private Long commissionPct;
+    private Collection<DepartmentsEntity> departmentsByEmployeeId;
+    private JobsEntity jobsByJobId;
+    private EmployeesEntity employeesByManagerId;
+    private Collection<EmployeesEntity> employeesByEmployeeId;
+    private DepartmentsEntity departmentsByDepartmentId;
+    private Collection<JobHistoryEntity> jobHistoriesByEmployeeId;
+
+    @Id
+    @GeneratedValue
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     @Id
     @Column(name = "EMPLOYEE_ID")
-    public long getEmployeeId() {
+    public Long getEmployeeId() {
         return employeeId;
     }
 
-    public void setEmployeeId(long employeeId) {
+    public void setEmployeeId(Long employeeId) {
         this.employeeId = employeeId;
     }
 
@@ -101,11 +119,68 @@ public class EmployeesEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         EmployeesEntity that = (EmployeesEntity) o;
-        return employeeId == that.employeeId && Objects.equals(firstName, that.firstName) && Objects.equals(lastName, that.lastName) && Objects.equals(email, that.email) && Objects.equals(phoneNumber, that.phoneNumber) && Objects.equals(hireDate, that.hireDate) && Objects.equals(salary, that.salary) && Objects.equals(commissionPct, that.commissionPct);
+        return Objects.equals(employeeId, that.employeeId) && Objects.equals(firstName, that.firstName) && Objects.equals(lastName, that.lastName) && Objects.equals(email, that.email) && Objects.equals(phoneNumber, that.phoneNumber) && Objects.equals(hireDate, that.hireDate) && Objects.equals(salary, that.salary) && Objects.equals(commissionPct, that.commissionPct);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(employeeId, firstName, lastName, email, phoneNumber, hireDate, salary, commissionPct);
+    }
+
+    @OneToMany(mappedBy = "employeesByManagerId")
+    public Collection<DepartmentsEntity> getDepartmentsByEmployeeId() {
+        return departmentsByEmployeeId;
+    }
+
+    public void setDepartmentsByEmployeeId(Collection<DepartmentsEntity> departmentsByEmployeeId) {
+        this.departmentsByEmployeeId = departmentsByEmployeeId;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "JOB_ID", referencedColumnName = "JOB_ID", nullable = false)
+    public JobsEntity getJobsByJobId() {
+        return jobsByJobId;
+    }
+
+    public void setJobsByJobId(JobsEntity jobsByJobId) {
+        this.jobsByJobId = jobsByJobId;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "MANAGER_ID", referencedColumnName = "EMPLOYEE_ID")
+    public EmployeesEntity getEmployeesByManagerId() {
+        return employeesByManagerId;
+    }
+
+    public void setEmployeesByManagerId(EmployeesEntity employeesByManagerId) {
+        this.employeesByManagerId = employeesByManagerId;
+    }
+
+    @OneToMany(mappedBy = "employeesByManagerId")
+    public Collection<EmployeesEntity> getEmployeesByEmployeeId() {
+        return employeesByEmployeeId;
+    }
+
+    public void setEmployeesByEmployeeId(Collection<EmployeesEntity> employeesByEmployeeId) {
+        this.employeesByEmployeeId = employeesByEmployeeId;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "DEPARTMENT_ID", referencedColumnName = "DEPARTMENT_ID")
+    public DepartmentsEntity getDepartmentsByDepartmentId() {
+        return departmentsByDepartmentId;
+    }
+
+    public void setDepartmentsByDepartmentId(DepartmentsEntity departmentsByDepartmentId) {
+        this.departmentsByDepartmentId = departmentsByDepartmentId;
+    }
+
+    @OneToMany(mappedBy = "employeesByEmployeeId")
+    public Collection<JobHistoryEntity> getJobHistoriesByEmployeeId() {
+        return jobHistoriesByEmployeeId;
+    }
+
+    public void setJobHistoriesByEmployeeId(Collection<JobHistoryEntity> jobHistoriesByEmployeeId) {
+        this.jobHistoriesByEmployeeId = jobHistoriesByEmployeeId;
     }
 }

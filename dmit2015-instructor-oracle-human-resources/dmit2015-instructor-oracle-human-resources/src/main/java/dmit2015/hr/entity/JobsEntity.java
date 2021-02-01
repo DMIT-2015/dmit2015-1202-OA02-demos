@@ -1,15 +1,29 @@
 package dmit2015.hr.entity;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.Objects;
 
 @Entity
 @Table(name = "JOBS", schema = "HR", catalog = "")
 public class JobsEntity {
+    private Long id;
     private String jobId;
     private String jobTitle;
     private Long minSalary;
     private Long maxSalary;
+    private Collection<EmployeesEntity> employeesByJobId;
+    private Collection<JobHistoryEntity> jobHistoriesByJobId;
+
+    @Id
+    @GeneratedValue
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     @Id
     @Column(name = "JOB_ID")
@@ -62,5 +76,23 @@ public class JobsEntity {
     @Override
     public int hashCode() {
         return Objects.hash(jobId, jobTitle, minSalary, maxSalary);
+    }
+
+    @OneToMany(mappedBy = "jobsByJobId")
+    public Collection<EmployeesEntity> getEmployeesByJobId() {
+        return employeesByJobId;
+    }
+
+    public void setEmployeesByJobId(Collection<EmployeesEntity> employeesByJobId) {
+        this.employeesByJobId = employeesByJobId;
+    }
+
+    @OneToMany(mappedBy = "jobsByJobId")
+    public Collection<JobHistoryEntity> getJobHistoriesByJobId() {
+        return jobHistoriesByJobId;
+    }
+
+    public void setJobHistoriesByJobId(Collection<JobHistoryEntity> jobHistoriesByJobId) {
+        this.jobHistoriesByJobId = jobHistoriesByJobId;
     }
 }
