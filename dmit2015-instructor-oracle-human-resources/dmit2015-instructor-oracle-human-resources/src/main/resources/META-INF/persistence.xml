@@ -17,8 +17,13 @@
 
 
     <properties>
+      <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle12cDialect"/>
+
       <property name="hibernate.connection.url" value="jdbc:oracle:thin:@//localhost:11521/XEPDB1"/>
       <property name="hibernate.connection.driver_class" value="oracle.jdbc.OracleDriver"/>
+      <property name="hibernate.connection.user" value="HR"/>
+      <property name="hibernate.connection.password" value="Password2015"/>
+
     </properties>
 
   </persistence-unit>
