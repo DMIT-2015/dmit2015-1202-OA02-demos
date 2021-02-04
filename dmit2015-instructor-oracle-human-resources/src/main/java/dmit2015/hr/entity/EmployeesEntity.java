@@ -6,7 +6,7 @@ import java.util.Collection;
 import java.util.Objects;
 
 @Entity
-@Table(name = "EMPLOYEES", schema = "HR", catalog = "")
+@Table(name = "EMPLOYEES", schema = "HR")
 public class EmployeesEntity {
     private Long id;
     private Long employeeId;
@@ -166,7 +166,7 @@ public class EmployeesEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "DEPARTMENT_ID", referencedColumnName = "DEPARTMENT_ID")
+    @JoinColumn(name = "DEPARTMENT_ID")
     public DepartmentsEntity getDepartmentsByDepartmentId() {
         return departmentsByDepartmentId;
     }
