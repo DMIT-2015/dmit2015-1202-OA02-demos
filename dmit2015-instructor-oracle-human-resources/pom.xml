@@ -21,7 +21,6 @@
   </properties>
 
   <dependencies>
-
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-core</artifactId>
@@ -36,13 +35,13 @@
       <version>19.9.0.0</version>
     </dependency>
 
-
     <dependency>
       <groupId>jakarta.platform</groupId>
       <artifactId>jakarta.jakartaee-api</artifactId>
       <version>${jakarta.jakartaee-api.version}</version>
       <scope>provided</scope>
     </dependency>
+
     <dependency>
       <groupId>org.eclipse.microprofile</groupId>
       <artifactId>microprofile</artifactId>

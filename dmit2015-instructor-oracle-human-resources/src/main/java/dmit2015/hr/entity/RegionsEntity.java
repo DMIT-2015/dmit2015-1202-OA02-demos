@@ -5,22 +5,11 @@ import java.util.Collection;
 import java.util.Objects;
 
 @Entity
-@Table(name = "REGIONS", schema = "HR", catalog = "")
+@Table(name = "REGIONS", schema = "HR")
 public class RegionsEntity {
-    private Long id;
     private Long regionId;
     private String regionName;
     private Collection<CountriesEntity> countriesByRegionId;
-
-    @Id
-    @GeneratedValue
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     @Id
     @Column(name = "REGION_ID")

@@ -5,9 +5,8 @@ import java.util.Collection;
 import java.util.Objects;
 
 @Entity
-@Table(name = "LOCATIONS", schema = "HR", catalog = "")
+@Table(name = "LOCATIONS", schema = "HR")
 public class LocationsEntity {
-    private Long id;
     private Long locationId;
     private String streetAddress;
     private String postalCode;
@@ -15,16 +14,6 @@ public class LocationsEntity {
     private String stateProvince;
     private Collection<DepartmentsEntity> departmentsByLocationId;
     private CountriesEntity countriesByCountryId;
-
-    @Id
-    @GeneratedValue
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     @Id
     @Column(name = "LOCATION_ID")

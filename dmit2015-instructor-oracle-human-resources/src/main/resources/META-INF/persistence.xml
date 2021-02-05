@@ -15,7 +15,6 @@
     <class>dmit2015.hr.entity.LocationsEntity</class>
     <class>dmit2015.hr.entity.RegionsEntity</class>
 
-
     <properties>
       <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle12cDialect"/>
 

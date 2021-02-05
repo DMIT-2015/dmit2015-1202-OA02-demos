@@ -5,26 +5,15 @@ import java.sql.Time;
 import java.util.Objects;
 
 @Entity
-@Table(name = "JOB_HISTORY", schema = "HR", catalog = "")
+@Table(name = "JOB_HISTORY", schema = "HR")
 @IdClass(JobHistoryEntityPK.class)
 public class JobHistoryEntity {
-    private Long id;
     private Long employeeId;
     private Time startDate;
     private Time endDate;
     private EmployeesEntity employeesByEmployeeId;
     private JobsEntity jobsByJobId;
     private DepartmentsEntity departmentsByDepartmentId;
-
-    @Id
-    @GeneratedValue
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     @Id
     @Column(name = "EMPLOYEE_ID")
@@ -70,7 +59,8 @@ public class JobHistoryEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "EMPLOYEE_ID", nullable = false)
+//  TODO: add , insertable = false, updatable = false to  @JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "EMPLOYEE_ID", nullable = false)
+    @JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "EMPLOYEE_ID", nullable = false, insertable = false, updatable = false)
     public EmployeesEntity getEmployeesByEmployeeId() {
         return employeesByEmployeeId;
     }

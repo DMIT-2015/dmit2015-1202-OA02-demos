@@ -110,7 +110,6 @@ class MovieRepositoryIT {
         assertEquals("PG", existingMovie.getRating());
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-M-dd");
         assertEquals(LocalDate.parse("1986-2-23", formatter).toString(), existingMovie.getReleaseDate().toString());
-
     }
 
     @Test

@@ -8,7 +8,6 @@ import java.util.Objects;
 @Entity
 @Table(name = "EMPLOYEES", schema = "HR")
 public class EmployeesEntity {
-    private Long id;
     private Long employeeId;
     private String firstName;
     private String lastName;
@@ -23,16 +22,6 @@ public class EmployeesEntity {
     private Collection<EmployeesEntity> employeesByEmployeeId;
     private DepartmentsEntity departmentsByDepartmentId;
     private Collection<JobHistoryEntity> jobHistoriesByEmployeeId;
-
-    @Id
-    @GeneratedValue
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     @Id
     @Column(name = "EMPLOYEE_ID")
@@ -166,7 +155,7 @@ public class EmployeesEntity {
     }
 
     @ManyToOne
-    @JoinColumn(name = "DEPARTMENT_ID")
+    @JoinColumn(name = "DEPARTMENT_ID", referencedColumnName = "DEPARTMENT_ID")
     public DepartmentsEntity getDepartmentsByDepartmentId() {
         return departmentsByDepartmentId;
     }

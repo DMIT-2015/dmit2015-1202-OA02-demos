@@ -5,25 +5,14 @@ import java.util.Collection;
 import java.util.Objects;
 
 @Entity
-@Table(name = "JOBS", schema = "HR", catalog = "")
+@Table(name = "JOBS", schema = "HR")
 public class JobsEntity {
-    private Long id;
     private String jobId;
     private String jobTitle;
     private Long minSalary;
     private Long maxSalary;
     private Collection<EmployeesEntity> employeesByJobId;
     private Collection<JobHistoryEntity> jobHistoriesByJobId;
-
-    @Id
-    @GeneratedValue
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     @Id
     @Column(name = "JOB_ID")

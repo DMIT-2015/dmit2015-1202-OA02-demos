@@ -6,8 +6,8 @@ import javax.enterprise.context.ApplicationScoped;
 @DataSourceDefinition(
         name = "java:app/datasources/oracleHrDs",
         className = "oracle.jdbc.pool.OracleDataSource",
-        url = "jdbc:oracle:thin:@localhost:11521/xepdb1",
-        user = "hr",
+        url = "jdbc:oracle:thin:@localhost:11521/XEPDB1",
+        user = "HR",
         password = "Password2015"
 )
 
