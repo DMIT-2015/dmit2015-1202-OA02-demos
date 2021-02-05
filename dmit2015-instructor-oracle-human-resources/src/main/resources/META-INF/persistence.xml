@@ -20,8 +20,10 @@
 
       <property name="hibernate.connection.url" value="jdbc:oracle:thin:@//localhost:11521/XEPDB1"/>
       <property name="hibernate.connection.driver_class" value="oracle.jdbc.OracleDriver"/>
-      <property name="hibernate.connection.user" value="HR"/>
-      <property name="hibernate.connection.password" value="Password2015"/>
+      <!-- IntelliJ IDEA bug: When you add a data source definition it will correctly user
+      -->
+<!--      <property name="hibernate.connection.username" value="HR"/>-->
+<!--      <property name="hibernate.connection.password" value="Password2015"/>-->
 
     </properties>
 
