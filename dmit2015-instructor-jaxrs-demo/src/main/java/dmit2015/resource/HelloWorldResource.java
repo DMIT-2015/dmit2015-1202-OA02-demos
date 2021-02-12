@@ -23,7 +23,7 @@ public class HelloWorldResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN) // "text/plain"
     public Response helloWorldText() {
-        String message = "Hello World from JAX-RS";
+        String message = "Hello World from JAX-RS!";
         return Response.ok(message).build();
     }
 
@@ -37,7 +37,7 @@ public class HelloWorldResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)   // "application/json"
     public Response helloWorldJson() {
-        String message = "{\"message\": \"Hello World from JAX-RS\"}";
+        String message = "{\"message\":\"Hello World from JAX-RS\"}";
         return Response.ok(message).build();
     }
 }
