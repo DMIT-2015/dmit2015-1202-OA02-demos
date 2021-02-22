@@ -29,7 +29,7 @@ public class HelloWorldResourceMicroshedTestingRESTAssuredIT {
                 .extract()
                 .response();
         String jsonBody = response.getBody().asString();
-        assertEquals("Hello World from JAX-RS", jsonBody);
+        assertEquals("Hello World from JAX-RS!", jsonBody);
     }
 
     @Test
@@ -59,6 +59,6 @@ public class HelloWorldResourceMicroshedTestingRESTAssuredIT {
                 .extract()
                 .response();
         String jsonBody = response.getBody().asString();
-        assertEquals("{\"message\": \"Hello World from JAX-RS\"}", jsonBody);
+        assertEquals("{\"message\":\"Hello World from JAX-RS\"}", jsonBody);
     }
 }
