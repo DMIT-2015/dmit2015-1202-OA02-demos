@@ -30,25 +30,25 @@ import java.util.Optional;
  * 	/webapi/TodoItems/{id}		DELETE			                                            Remove the TodoItem
  *
 
- curl -i -X GET http://localhost:8080/dmit2015-jaxrs-demo/webapi/TodoItems
+ curl -i -X GET http://localhost:8080/dmit2015-instructor-jaxrs-demo/webapi/TodoItems
 
- curl -i -X GET http://localhost:8080/dmit2015-jaxrs-demo/webapi/TodoItems/1
+ curl -i -X GET http://localhost:8080/dmit2015-instructor-jaxrs-demo/webapi/TodoItems/1
 
- curl -i -X POST http://localhost:8080//dmit2015-jaxrs-demo/webapi/TodoItems \
+ curl -i -X POST http://localhost:8080/dmit2015-instructor-jaxrs-demo/webapi/TodoItems \
  -d '{"name":"Finish DMIT2015 Assignment 1","complete":false}' \
  -H 'Content-Type:application/json'
 
- curl -i -X GET http://localhost:8080/dmit2015-jaxrs-demo/webapi/TodoItems/4
+ curl -i -X GET http://localhost:8080/dmit2015-instructor-jaxrs-demo/webapi/TodoItems/4
 
- curl -i -X PUT http://localhost:8080/dmit2015-jaxrs-demo/webapi/TodoItems/4 \
+ curl -i -X PUT http://localhost:8080/dmit2015-instructor-jaxrs-demo/webapi/TodoItems/4 \
  -d '{"id":4,"name":"Demo DMIT2015 Assignment 1","complete":true}' \
  -H 'Content-Type:application/json'
 
- curl -i -X GET http://localhost:8080/dmit2015-jaxrs-demo/webapi/TodoItems/4
+ curl -i -X GET http://localhost:8080/dmit2015-instructor-jaxrs-demo/webapi/TodoItems/4
 
- curl -i -X DELETE http://localhost:8080/dmit2015-jaxrs-demo/webapi/TodoItems/4
+ curl -i -X DELETE http://localhost:8080/dmit2015-instructor-jaxrs-demo/webapi/TodoItems/4
 
- curl -i -X GET http://localhost:8080/dmit2015-jaxrs-demo/webapi/TodoItems/4
+ curl -i -X GET http://localhost:8080/dmit2015-instructor-jaxrs-demo/webapi/TodoItems/4
 
  *
  */
