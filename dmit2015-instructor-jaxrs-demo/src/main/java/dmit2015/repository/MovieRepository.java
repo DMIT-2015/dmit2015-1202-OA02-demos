@@ -36,6 +36,7 @@ public class MovieRepository {
             existingMovie.setPrice(updatedMovie.getPrice());
             existingMovie.setRating(updatedMovie.getRating());
             existingMovie.setReleaseDate(updatedMovie.getReleaseDate());
+            existingMovie.setVersion(updatedMovie.getVersion());
             em.merge(existingMovie);
             em.flush();
         }
