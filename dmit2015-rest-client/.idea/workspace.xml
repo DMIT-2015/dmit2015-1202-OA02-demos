@@ -9,25 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3c26fc6-b2f3-4d4e-abc6-6469cd01a974" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhl/client/NhlApiService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhl/data/division/Conference.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhl/data/division/Division.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhl/data/division/DivisionResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhl/data/team/Conference.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhl/data/team/Division.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhl/data/team/Franchise.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhl/data/team/Team.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhl/data/team/TeamResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhl/data/team/TimeZone.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhl/data/team/Venue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhl/view/DivisionListController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhl/view/TeamListController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/nhl/divisions/index.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/nhl/teams/index.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsf-templates/layout.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsf-templates/layout.xhtml" afterDir="false" />
-    </list>
+    <list default="true" id="e3c26fc6-b2f3-4d4e-abc6-6469cd01a974" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -217,7 +199,7 @@
       <workItem from="1614621926786" duration="194000" />
       <workItem from="1614629780321" duration="541000" />
       <workItem from="1615349206042" duration="724000" />
-      <workItem from="1615493112039" duration="5950000" />
+      <workItem from="1615493112039" duration="6679000" />
     </task>
     <servers />
   </component>
