@@ -8,14 +8,19 @@
         <welcome-file>index.xhtml</welcome-file>
     </welcome-file-list>
 
-    <servlet>
-        <servlet-name>H2Console</servlet-name>
-        <servlet-class>org.h2.server.web.WebServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>H2Console</servlet-name>
-        <url-pattern>/h2-console/*</url-pattern>
-    </servlet-mapping>
+<!--    <servlet>-->
+<!--        <servlet-name>H2Console</servlet-name>-->
+<!--        <servlet-class>org.h2.server.web.WebServlet</servlet-class>-->
+<!--        <load-on-startup>1</load-on-startup>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>H2Console</servlet-name>-->
+<!--        <url-pattern>/h2-console/*</url-pattern>-->
+<!--    </servlet-mapping>-->
 
+    <env-entry>
+        <env-entry-name>dmit2015.config.DOWNLOAD_PATH</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>
+        <env-entry-value>/home/user2015/Downloads</env-entry-value>
+    </env-entry>
 </web-app>

@@ -24,8 +24,8 @@ public class AutomaticTimersBean {	// Also known as Calendar-Based Timers
 	 *         <env-entry-value>yourUsername@yourEmailServer</env-entry-value>
 	 *     </env-entry>
 	 */
-//	@Resource(name="ca.dmit2015.config.SYSADMIN_EMAIL")
-//	private String mailToAddress;
+	@Resource(name="ca.dmit2015.config.SYSADMIN_EMAIL")
+	private String mailToAddress;
 //
 //	@Inject
 //	private EmailSessionBean mail;
@@ -55,6 +55,7 @@ public class AutomaticTimersBean {	// Also known as Calendar-Based Timers
 	public void dmit2015SectionOA01ClassNotifiation(Timer timer) {
 		//sendEmail(timer);
 		System.out.println("Hello from automatic Timer");
+
 	}
 
 //	@Schedule(second = "0", minute ="50", hour = "7", dayOfWeek = "Tue,Thu,Fri", month = "Jan-Apr", year = "2021", info ="DMIT2015-OA02 Meeting", persistent = false)

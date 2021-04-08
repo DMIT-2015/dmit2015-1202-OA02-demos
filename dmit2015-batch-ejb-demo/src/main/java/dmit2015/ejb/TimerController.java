@@ -1,6 +1,7 @@
 package dmit2015.ejb;
 
 import javax.ejb.Timer;
+import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -8,9 +9,8 @@ import java.io.Serializable;
 import java.util.Collection;
 
 @Named
-@SessionScoped
-public class TimerController implements Serializable {
-    private static final long serialVersionUID = 1L;
+@RequestScoped
+public class TimerController {
 
     @Inject
     private ProgrammaticTimersManagerBean timerBean;
